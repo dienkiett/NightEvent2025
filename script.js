@@ -93,6 +93,7 @@ const reverseAudio = () => {
     if(!isReverse){
         pauseAudio();
         audio.src = "./objects/_audio.mp3";
+        audio.load();
         isReverse = true;
         body.style.animationName = "flip";
         setTimeout(() => {
@@ -105,6 +106,7 @@ const reverseAudio = () => {
         alertText.style.display = "none";
         pauseAudio();
         audio.src = "./objects/audio.mp3";
+        audio.load();
         isReverse = false;
         body.style.animationName = "unflip";
         time = -1;
