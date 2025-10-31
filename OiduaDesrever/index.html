@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="./objects/icon/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <title>6741 Audio Player</title>   
+    <link rel="stylesheet" href="./style.css"> 
+</head>
+
+<body id="body">
+    <div id="loadingScreen" class="loadingScreen">
+        <div id="loader" class="loader"></div>
+    </div>
+    <div id="navBar" class="navBar">
+        <button onclick="loading();" class="file">File</button>
+        <button onclick="toggleMenu()" class="edit">Edit</button>
+        <button onclick="loading();" class="view">View</button>
+        <button onclick="loading();" class="saved">Saved Audios</button>
+        <span id="alertText" class="alertText"></span>
+    </div>   
+    <div id="menu" class="menu">
+        <button onclick="loading();" class="dropdown">Trim Audio</button>
+        <button onclick="loading();" class="dropdown">Extend Audio</button>
+        <button onclick="loading();" class="dropdown">Copy</button>
+        <button onclick="loading();" class="dropdown">Paste</button>
+        <button onclick="loading();" class="dropdown">Cut</button>
+        <button onclick="reverseAudio();" class="dropdown">Reverse</button>
+        <button onclick="loading();" class="dropdown">Audio Effects</button>
+        <button onclick="loading();" class="dropdown">Denoise</button>
+    </div>
+    <div id="main" class="main">
+        <div id="mainTitle" class="mainTitle">
+            <span class="name">6741 Audio Player 🎉</span>
+            <button onclick="loading();" class="upload">Upload<img src="./objects/icon/upload.png" alt="" draggable="false"></button>
+        </div>
+
+        <div id="mainMedia" class="mainMedia">
+            <div id="player" class="player">
+                <audio src="./objects/audio.mp3" preload=”metadata”></audio>
+                <button id="playButton" class="playButton"><img id="playIcon" src="./objects/icon/play.png" alt="Play" draggable="False"></button>
+                <div id="audio" class="audio">
+                    <input type="range" id="durationSlider" class="durationSlider" max="100" value="0">
+                    <div id="subAudio" class="subAudio">
+                        <span id="currentTime" class="time">0:00</span>
+                        <span id="duration" class="time">0:00</span>
+                    </div>
+                </div>
+                <button id="saveButton" class="saveButton"><img id="saveIcon" src="./objects/icon/save.png" alt="Save" draggable="false"></button>
+            </div>
+            <div id="subPlayer" class="subPlayer">
+                <button id="skipLeft" class="skip"><img src="./objects/icon/skipLeft.png" alt="Skip Left" draggable="false"></button>
+                <button id="seekLeft" class="seek">-10s</button>
+                <button id="seekRight" class="seek">+10s</button>
+                <button id="skipRight" class="skip"><img src="./objects/icon/skipRight.png" alt="Skip Right" draggable="false"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

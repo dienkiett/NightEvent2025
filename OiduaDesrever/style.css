@@ -1,0 +1,438 @@
+:root{
+    --body-colour: #F1FDE5;
+    --accent-colour: #D2F7B2;
+    --dark-accent-colour: #B1D096;
+    --light-accent-colour: #D9F8BD;
+    --black: #919887;
+    --red: #E85851;
+    --dark-red: #C44C46;
+    --light-red: #EF7368;
+    --blue: #95BBFF;
+    --light-blue: #A6C4FF;
+    --dark-blue: #7F9ED6;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    background-color: var(--body-colour);
+    font-family: Arial, Helvetica, sans-serif;
+    font-optical-sizing: initial;
+    font-stretch: expanded;
+    font-style: normal;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: thin;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    height: 100%;
+    scrollbar-width: none;
+}
+
+
+body {
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    outline: 0;
+    height: 100%;
+    background: var(--body-colour);
+}
+
+@keyframes flip {
+    100% {
+        rotate: 0 1 0 180deg;
+    }
+}
+
+@keyframes unflip {
+    0% {
+        rotate: 0 1 0 180deg;
+    }
+    100% {
+        rotate: 0 1 0 0deg;
+    }
+}
+
+.loadingScreen {
+    display: none;
+    z-index: 2;
+    background: gainsboro;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.loader {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    margin: auto;
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid var(--dark-accent-colour); /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+span {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 5px;
+}
+.navBar {
+    position: fixed;
+    top: 0;
+    background: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    width: 100%;;
+    height: 40px;
+    border-bottom: 5px solid var(--black);
+    background: var(--accent-colour);
+}
+
+button {
+    cursor: pointer;
+}
+
+.navBar > button {
+    font-size: 18px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: none;
+    border-right: 2px solid var(--black);
+    height: 100%;
+    padding: 10px 15px;
+    background: var(--accent-colour);
+}
+
+.navBar > button:hover{
+    background-color: var(--dark-accent-colour);
+}
+
+.navBar > button:active {
+    background-color: var(--light-accent-colour);
+}
+
+.alertText {
+    display: none;
+    font-size: 18px;
+    font-weight: bold;
+    width: max-content;
+    height: 100%;
+    padding-right: 20%;
+}
+
+.menu {
+    z-index: 3;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    left: 0;
+    margin-top: 45px;
+}
+
+.menu > button {
+    font-size: 16px;
+    padding: 10px 20px;
+    background: white;
+    border: none;
+}
+
+.menu > button:hover {
+    background: whitesmoke;
+}
+
+.menu > button:active {
+    background: gainsboro;
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+    padding-top: 36px;
+    display: flex;
+    gap: 7vh;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mainTitle {
+    font-size: 5vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;    
+    align-items: center;
+    height: 10vw;
+    width: 75vw;
+    padding: 0px;
+    margin-top: 12vh;
+    border: 4px solid var(--black);
+    background: var(--accent-colour);
+}
+
+.mainTitle > .name {
+    width: auto;
+    height: auto;
+    font-weight: bold;
+}
+
+.mainTitle > .upload {
+    font-size: 2vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 50%;
+    gap: 5px;
+    border: 0px;
+    border-radius: 40px;
+    padding: 0px 15px;
+    background: white
+}
+
+.mainTitle > .upload:hover {
+    background: whitesmoke
+}
+
+.mainTitle > .upload:active {
+    background: gainsboro
+}
+
+.mainTitle > .upload > img {
+    height: 60%;
+}
+
+.mainMedia {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7vh
+}
+
+.player {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 30vh;
+    width: 60%;
+    background: var(--accent-colour);
+    border: 5px solid var(--black);
+    border-radius: 20px;
+}
+
+.player > button {
+height: 10vw;
+    width: 10vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+}
+
+.playButton {
+    background: var(--red);
+}
+
+.playButton:hover {
+    background: var(--dark-red);
+}
+
+.playButton:active {
+    background: var(--light-red);
+}
+
+.playButton > img {
+    height: 75%;
+    font-weight: bold;
+    font-size: 2.5vw;
+    color: white;
+}
+
+.audio {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    --seek-before-width: 0%;
+}
+
+.durationSlider {
+    position: relative;
+    -webkit-appearance: none;
+    width: 100%;
+    outline: none;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+.durationSlider::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 1vw;
+    cursor: pointer;
+    background: white;
+    border-radius: 6px;
+}
+
+.durationSlider::before {
+    position: absolute;
+    content: "";
+    width: var(--seek-before-width);
+    height: 1vw;
+    background-color: var(--black);
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.durationSlider::-webkit-slider-thumb {
+    position: relative;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    height: 2vw;
+    width: 2vw;
+    border: 5px solid var(--black);
+    margin: calc(-1.6vw/3) 0 0 0;
+    border-radius: 50%;
+    background-color: var(--body-colour);
+    cursor: pointer;
+}
+.durationSlider:active::-webkit-slider-thumb {
+    background: var(--black);
+}
+.durationSlider::-moz-range-track {
+    width: 100%;
+    height: 0.7vw;
+    cursor: pointer;
+    background: white;
+    border-radius: 6px;
+}
+.durationSlider::-moz-range-progress {
+    background-color: var(--black);
+    border-radius: 6px;
+}
+.durationSlider::-moz-focus-outer {
+    border: 0;
+}
+.durationSlider::-moz-range-thumb {
+    position: relative;
+    box-sizing: border-box;
+    height: 1.4vw;
+    width: 1.4vw;
+    border: 1px solid var(--black);
+    margin: calc(-1.1vw/3) 0 0 0;
+    border-radius: 50%;
+    background-color: var(--body-colour);
+    cursor: pointer;
+}
+.durationSlider:active::-moz-range-thumb {
+    background: var(--black);
+    border-radius: 6px;
+}
+.durationSlider::-ms-track {
+    width: 100%;
+    height: 0.7vw;
+    cursor: pointer;
+    background: white;
+    border-radius: 6px;
+}
+.durationSlider::-ms-fill-lower {
+    background-color: var(--black);
+    border-radius: 6px;
+}
+
+.subAudio {
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.subAudio > span {
+    width: auto;
+}
+
+.saveButton {
+    background: var(--blue);
+}
+
+.saveButton > img {
+    height: 80%;
+}
+
+.saveButton:hover {
+    background: var(--dark-blue);
+}
+
+.saveButton:active {
+    background: var(--light-blue);
+}
+
+.subPlayer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4vw;
+    height: 10vh;
+}
+
+.subPlayer > button {
+    padding: 0px 30px;
+    border-radius: 20px;
+    border: 4px solid var(--black);
+    background: var(--accent-colour);
+}
+
+.subPlayer > button:hover {
+    background: var(--dark-accent-colour);
+}
+
+.subPlayer > button:active {
+    background: var(--light-accent-colour);
+}
+
+.seek {
+    font-weight: bold;
+    font-size: 30px;
+    height: 80%;
+}
+
+.skip {
+    height: 100%;
+}
+
+.skip > img {
+    height: 100%;
+}
