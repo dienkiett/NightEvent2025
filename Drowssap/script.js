@@ -93,7 +93,7 @@ const reverseAudio = () => {
     if(!isReverse){
         pauseAudio();
         audio.src = "https://raw.githubusercontent.com/dienkiett/NightEvent2025/master/Drowssap/objects/_audio.mp3";
-        // audio.load();
+        audio.load();
         isReverse = true;
         body.style.animationName = "flip";
         setTimeout(() => {
@@ -106,7 +106,7 @@ const reverseAudio = () => {
         alertText.style.display = "none";
         pauseAudio();
         audio.src = "https://raw.githubusercontent.com/dienkiett/NightEvent2025/master/Drowssap/objects/audio.mp3";
-        // audio.load();
+        audio.load();
         isReverse = false;
         body.style.animationName = "unflip";
         time = -1;
