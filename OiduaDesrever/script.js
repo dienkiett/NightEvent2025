@@ -43,7 +43,7 @@ let timer = setInterval(() => {
         reverseAudio();
     }
 }, 10);
-// https://raw.githubusercontent.com/dienkiett/NightEvent2025/master/objects/audio.mp3
+
 const playAudio = () => {
     audio.play();
     playIcon.src = "./objects/icon/pause.png";
@@ -92,7 +92,7 @@ const toggleMenu = () => {
 const reverseAudio = () => {
     if(!isReverse){
         pauseAudio();
-        audio.src = "https://raw.githubusercontent.com/dienkiett/NightEvent2025/master/objects/_audio.mp3";
+        audio.src = "https://raw.githubusercontent.com/dienkiett/NightEvent2025/OiduaDesrever/master/objects/_audio.mp3";
         // audio.load();
         isReverse = true;
         body.style.animationName = "flip";
@@ -105,7 +105,7 @@ const reverseAudio = () => {
     } else {
         alertText.style.display = "none";
         pauseAudio();
-        audio.src = "https://raw.githubusercontent.com/dienkiett/NightEvent2025/master/objects/audio.mp3";
+        audio.src = "https://raw.githubusercontent.com/dienkiett/NightEvent2025/OiduaDesrever/master/objects/audio.mp3";
         // audio.load();
         isReverse = false;
         body.style.animationName = "unflip";
