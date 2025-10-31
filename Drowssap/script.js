@@ -27,7 +27,7 @@ const seekRightButton = document.getElementById('seekRight');
 const skipLeftButton = document.getElementById('skipLeft');
 const skipRightButton = document.getElementById('skipRight');
 
-const timeLimit = 60.0;
+const timeLimit = 30.0;
 const timeStep = 0.01;
 let time = -1;
 let state = 'play';
